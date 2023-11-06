@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Money from './Money'
+import IPAddress from './IP_Address'
 
 export default function Body() {
     const [details, setDetails] = useState()
@@ -95,6 +96,8 @@ export default function Body() {
 
     return (
         <main className='flex md:flex-row xsm:flex-col h-max w-screen'>
+
+            {/* <IPAddress/> */}
 
             <section id="input-container" className="md:w-6/12  py-6 p-4 m-4 h-max space-y-8 items-center border border-blue-600 rounded border-">
 
