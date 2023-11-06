@@ -6,6 +6,7 @@ export default function Body() {
     const [details, setDetails] = useState()
     const [amount, setAmount] = useState()
     const [moneyArrayLS, setMoneyArrayLS] = useState([])
+    const [month, setMonth] = useState('')
 
     const [noTransactions, setNoTransactions] = useState(true)
 
@@ -86,11 +87,14 @@ export default function Body() {
     useEffect(() => {
 
         getMoney()
+    setMonth("November")
+
 
     }, [handleClick])
     
 
     console.log('Works')
+
 
 
 
@@ -128,6 +132,7 @@ export default function Body() {
                     <div>
                         <h1 className='text-4xl text-blue-700'>Transaction Histroy</h1>
                         <p className="text-center text-xl text-blue-600">Transactions: {moneyArrayLS.length}</p>
+                        <p className="text-center text-xl text-blue-600">{month}</p> 
 
                     </div>
                     }
@@ -137,7 +142,7 @@ export default function Body() {
                    moneyArrayLS && moneyArrayLS.map((money, index) => (
 
 
-                    <Money key={index} details={money.details} amount={money.amount} date={money.date} />
+                    <Money key={index} details={money.details} amount={money.amount} date={money.date} monthProp={month}/>
 
 
 
