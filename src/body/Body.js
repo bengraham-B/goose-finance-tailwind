@@ -6,7 +6,7 @@ export default function Body() {
     const [details, setDetails] = useState()
     const [amount, setAmount] = useState()
     const [moneyArrayLS, setMoneyArrayLS] = useState([])
-    const [month, setMonth] = useState('')
+    const [monthState, setMonthState] = useState('')
 
     const [noTransactions, setNoTransactions] = useState(true)
 
@@ -87,7 +87,7 @@ export default function Body() {
     useEffect(() => {
 
         getMoney()
-    setMonth("November")
+        setMonthState("November")
 
 
     }, [handleClick])
@@ -138,8 +138,8 @@ export default function Body() {
                     }
                 
                    { 
-                   
-                   moneyArrayLS && moneyArrayLS.map((money, index) => (
+
+                    moneyArrayLS && moneyArrayLS.filter(data => data.month === monthState).map((money, index) => (
 
 
                     <Money key={index} details={money.details} amount={money.amount} date={money.date} monthProp={month}/>

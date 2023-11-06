@@ -7,7 +7,7 @@ export default function Money(props) {
         <h1 className=''>{props.details}</h1>
         <h2>R{props.amount}</h2>
         <h3>{props.date}</h3>
-        <h4>{props.monthProp}</h4>
+        <h4>{props.month}</h4>
     </div>
   )
 }
